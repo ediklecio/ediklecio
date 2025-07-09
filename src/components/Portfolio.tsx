@@ -1,8 +1,14 @@
-import React from 'react';
-import { Camera, ExternalLink } from 'lucide-react';
-import profileImage from '@/assets/profile.png';
+import { Camera, MonitorCog } from 'lucide-react';
+import profileImage from '@/assets/profile.jpg';
 
 const Portfolio = () => {
+  const urlPhotogrphy = "https://ediklecio-foto.lovable.app";
+  const urlSystems = "https://ediklecio.github.io/porfolio";
+
+  const handleNavigate = (url: string = urlSystems) => {
+    window.open(url, '');
+  };
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-8">
       <div className="relative">
@@ -44,12 +50,12 @@ const Portfolio = () => {
             {/* Connection line */}
             <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent animate-draw-line origin-top"></div>
             
-            {/* Camera Icon */}
-            <div className="animate-fade-in-delayed-2">
+             {/* Link Icon */}
+            <div className="animate-fade-in-delayed-3" onClick={() => handleNavigate()} >
               <div className="group relative">
                 <div className="absolute inset-0 bg-primary rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <button className="relative w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-icon hover:shadow-xl hover:scale-110 transition-all duration-300 group">
-                  <Camera className="w-8 h-8 text-primary-foreground" />
+                  <MonitorCog className="w-8 h-8 text-primary-foreground" />
                 </button>
               </div>
             </div>
@@ -57,12 +63,12 @@ const Portfolio = () => {
             {/* Connection line */}
             <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent animate-draw-line origin-top"></div>
             
-            {/* Link Icon */}
-            <div className="animate-fade-in-delayed-3">
+            {/* Camera Icon */}
+            <div className="animate-fade-in-delayed-2"  onClick={() => handleNavigate(urlPhotogrphy)} >
               <div className="group relative">
                 <div className="absolute inset-0 bg-primary rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <button className="relative w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-icon hover:shadow-xl hover:scale-110 transition-all duration-300 group">
-                  <ExternalLink className="w-8 h-8 text-primary-foreground" />
+                  <Camera className="w-8 h-8 text-primary-foreground" />
                 </button>
               </div>
             </div>
@@ -72,11 +78,11 @@ const Portfolio = () => {
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-center space-x-24">
           {/* Left Side - Link Icon */}
-          <div className="flex flex-col items-center space-y-8 animate-fade-in-delayed-2">
+          <div className="flex flex-col items-center space-y-8 animate-fade-in-delayed-2" onClick={() => handleNavigate()} >
             <div className="group relative">
               <div className="absolute inset-0 bg-primary rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
               <button className="relative w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-icon hover:shadow-xl hover:scale-110 transition-all duration-300 group">
-                <ExternalLink className="w-10 h-10 text-primary-foreground" />
+                <MonitorCog className="w-8 h-8 text-primary-foreground" />
               </button>
             </div>
             {/* Connection line */}
@@ -115,7 +121,7 @@ const Portfolio = () => {
           </div>
 
           {/* Right Side - Camera Icon */}
-          <div className="flex flex-col items-center space-y-8 animate-fade-in-delayed-3">
+          <div className="flex flex-col items-center space-y-8 animate-fade-in-delayed-3" onClick={() => handleNavigate(urlPhotogrphy)} >
             <div className="group relative">
               <div className="absolute inset-0 bg-primary rounded-full blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
               <button className="relative w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-icon hover:shadow-xl hover:scale-110 transition-all duration-300 group">
